@@ -1,18 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:id="@+id/Tabs"
+
+    android:layout_gravity="center"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <TableLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center"
+        android:columnCount="1"
+        android:rowCount="4">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/AddAShow"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:text="Add a Show"
+            android:onClick="gotoAdd"/>
+
+        <Button
+            android:id="@+id/MyShows"
+            android:layout_column="0"
+
+            android:layout_row="0"
+            android:text="My Shows"
+            android:onClick="gotoMyShows"/>
+
+        <Button
+            android:id="@+id/Stats"
+            android:layout_column="2"
+            android:layout_row="0"
+            android:text="Stats"
+            android:onClick="gotoStats"/>
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_column="3"
+            android:layout_row="0"
+            android:text="Settings"
+            android:onClick="gotoSettings"/>
+
+    </TableLayout>
+</FrameLayout>
