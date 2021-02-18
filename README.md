@@ -1,4 +1,4 @@
-# ** TVStats **
+# TVStats
 
 A personal project of mine to help me better track the Movies and TV shows I watch.
 The interface is simple with usability in mind to allow people to add a show to
