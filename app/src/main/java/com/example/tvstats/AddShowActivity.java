@@ -9,4 +9,5 @@ public class AddShowActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_show);
     }
+    //TODO: Add the layout and any functions for this class
 }

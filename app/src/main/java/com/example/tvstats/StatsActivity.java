@@ -9,4 +9,5 @@ public class StatsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stats);
     }
+    //TODO: Add the layout and any functions for this class
 }

@@ -58,4 +58,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return result != -1;
     }
+    public boolean editShow(String whatToEdit, String newVal){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        //TODO: Create case statements to change updated fields
+        if(whatToEdit.equals("title")){
+            values.put(C1, newVal);
+        }
+
+        //TODO: insert query goes here
+        boolean result = false;
+        return result;
+    }
 }

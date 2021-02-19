@@ -9,4 +9,5 @@ public class SettingsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
     }
+    //TODO: Add the layout and any functions for this class
 }
