@@ -29,7 +29,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //build the table for our shows, we don't allow for any nulls
         //rating must be 0<=rating<=10
         String createTable = "CREATE TABLE " + TABLE_NAME +
-                " (ID INT PRIMARY KEY AUTOINCREMENT, " +
+                " ("+ C0 +" INT PRIMARY KEY AUTOINCREMENT, " +
                 C1 + " TEXT NOT NULL, " +
                 C2 + " INT NOT NULL, " +
                 C3 + " INT NOT NULL, " +
