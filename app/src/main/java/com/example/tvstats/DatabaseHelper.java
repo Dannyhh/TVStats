@@ -15,7 +15,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String C2 = "total_episodes";
     private static final String C3 = "watched_episodes";
     private static final String C4 = "rating";
-    private static final String C5 = "date_completed";
+    private static final String C5 = "status";
+    private static final String C6 = "date_completed";
+
 
     public DatabaseHelper(Context context) {
         super(context,TABLE_NAME, null, 1);
@@ -32,7 +34,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 C2 + " INT NOT NULL, " +
                 C3 + " INT NOT NULL, " +
                 C4 + " INT CHECK("+C4+" >=0  AND "+C4+" <= 10) NOT NULL, " +
-                C5 + " TEXT NOT NULL)";
+                C5 + " TEXT NOT NULL, " +
+                C6 + " TEXT)";
         db.execSQL(createTable);
     }
 
