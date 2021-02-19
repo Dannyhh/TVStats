@@ -2,6 +2,7 @@ package com.example.tvstats;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -20,15 +21,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void gotoAdd(View view) {
-        setContentView(R.layout.activity_add_show);
+        Intent myIntent = new Intent(view.getContext(), AddShowActivity.class);
+        startActivityForResult(myIntent, 0);
     }
     public void gotoMyShows(View view) {
-        setContentView(R.layout.activity_my_shows);
+        Intent myIntent = new Intent(view.getContext(), MyShowsActivity.class);
+        startActivityForResult(myIntent, 0);
     }
     public void gotoStats(View view) {
-        setContentView(R.layout.activity_stats);
+        Intent myIntent = new Intent(view.getContext(), StatsActivity.class);
+        startActivityForResult(myIntent, 0);
     }
     public void gotoSettings(View view) {
-        setContentView(R.layout.activity_settings);
+        Intent myIntent = new Intent(view.getContext(), SettingsActivity.class);
+        startActivityForResult(myIntent, 0);
     }
 }
