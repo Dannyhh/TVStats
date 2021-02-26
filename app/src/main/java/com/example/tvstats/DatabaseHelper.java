@@ -2,8 +2,11 @@ package com.example.tvstats;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     //name of our database of shows
@@ -29,11 +32,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //build the table for our shows, we don't allow for any nulls
         //rating must be 0<=rating<=10
         String createTable = "CREATE TABLE " + TABLE_NAME +
-                " ("+ C0 +" INT PRIMARY KEY AUTOINCREMENT, " +
+                "( " + C0 +" INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 C1 + " TEXT NOT NULL, " +
-                C2 + " INT NOT NULL, " +
-                C3 + " INT NOT NULL, " +
-                C4 + " INT CHECK("+C4+" >=0  AND "+C4+" <= 10) NOT NULL, " +
+                C2 + " INTEGER NOT NULL, " +
+                C3 + " INTEGER NOT NULL, " +
+                C4 + " INTEGER CHECK("+C4+" >=0  AND "+C4+" <= 10) NOT NULL, " +
                 C5 + " TEXT NOT NULL, " +
                 C6 + " TEXT)";
         db.execSQL(createTable);
@@ -46,17 +49,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
     //function to add the shows, called by other classes/functions to insert data
-    public boolean addShow(String title, int totalEp, int watchedEP, int rating, String date){
+    //TODO: determine if date completed should be automatically added if status is set to complete
+    public boolean addShow(String title, int totalEp, int watchedEP, int rating, String status, String date){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(C1, title);
         values.put(C2, totalEp);
         values.put(C3, watchedEP);
         values.put(C4, rating);
-        values.put(C5, date);
+        values.put(C5, status);
+        values.put(C6, date);
         long result = db.insert(TABLE_NAME, null, values);
-
+        getAll();
         return result != -1;
+    }
+    
+    public void getAll(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String queryString =
+                "SELECT * FROM " + TABLE_NAME;
+        Cursor c = db.rawQuery(queryString, null);
     }
     public boolean editShow(String whatToEdit, String newVal){
         SQLiteDatabase db = this.getWritableDatabase();
