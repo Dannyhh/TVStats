@@ -14,13 +14,14 @@ public class MainActivity extends AppCompatActivity {
      *TODO: Then cycle these images in the background of MainActivity w/ blur
      */
     ArrayList<Integer> backgroundImages = new ArrayList<>();
-    DatabaseHelper dbh;
+    public static DatabaseHelper dbh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         backgroundImages.add(R.drawable.basic);
+        dbh = new DatabaseHelper(this);
     }
 
     //go to the view that allows a user to add a show
