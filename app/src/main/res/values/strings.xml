@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">TVStats</string>
+    <string name="show_title">Show Title</string>
+    <string name="total_episodes">Total Episodes</string>
+    <string name="currently_watched_episodes">Currently Watched Episodes</string>
+    <string name="rating">Rating</string>
+    <string name="status">Status</string>
+    <string name="date_completed">Date Completed</string>
+    <string name="add_show">Add Show</string>
+    <string name="my_shows">My Shows</string>
+    <string name="stats">Stats</string>
+    <string name="settings">Settings</string>
 </resources>

@@ -16,32 +16,23 @@
         android:rowCount="4">
 
         <Button
-            android:id="@+id/AddAShow"
-            android:layout_column="0"
-            android:layout_row="0"
-            android:text="Add a Show"
+            android:id="@+id/AddAShowButton"
+            android:text="@string/add_show"
             android:onClick="gotoAdd"/>
 
         <Button
-            android:id="@+id/MyShows"
-            android:layout_column="0"
-
-            android:layout_row="0"
-            android:text="My Shows"
+            android:id="@+id/MyShowsButton"
+            android:text="@string/my_shows"
             android:onClick="gotoMyShows"/>
 
         <Button
-            android:id="@+id/Stats"
-            android:layout_column="2"
-            android:layout_row="0"
-            android:text="Stats"
+            android:id="@+id/StatsButton"
+            android:text="@string/stats"
             android:onClick="gotoStats"/>
 
         <Button
-            android:id="@+id/button4"
-            android:layout_column="3"
-            android:layout_row="0"
-            android:text="Settings"
+            android:id="@+id/SettingsButton"
+            android:text="@string/settings"
             android:onClick="gotoSettings"/>
 
     </TableLayout>
