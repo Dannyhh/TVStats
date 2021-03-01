@@ -64,11 +64,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result != -1;
     }
     
-    public void getAll(){
+    public Cursor getAll(){
         SQLiteDatabase db = this.getWritableDatabase();
         String queryString =
                 "SELECT * FROM " + TABLE_NAME;
-        Cursor c = db.rawQuery(queryString, null);
+        return db.rawQuery(queryString, null);
     }
     public boolean editShow(String whatToEdit, String newVal){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -80,7 +80,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
         //TODO: insert query goes here
-        boolean result = false;
-        return result;
+        return false;
     }
 }
