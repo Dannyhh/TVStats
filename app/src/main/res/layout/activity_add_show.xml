@@ -14,7 +14,7 @@
         android:layout_gravity="center_horizontal"
         android:columnCount="1"
         android:layout_marginBottom="5pt"
-        android:rowCount="12">
+        android:rowCount="10">
         <TextView
             android:text="@string/show_title"
             android:textColor="@color/black"
@@ -56,10 +56,13 @@
             android:textAllCaps="true"
             android:textAlignment="center"
             android:gravity="center_horizontal" />
-        <EditText
-            android:id="@+id/Rating"
-            android:inputType="numberDecimal"
-            android:hint="@string/rating"/>
+        <Spinner
+            android:id="@+id/rating_spinner"
+            android:spinnerMode="dropdown"
+            android:drawSelectorOnTop="true"
+            android:layout_height="17pt"
+            android:prompt="@string/ratingspin"
+            android:entries="@array/rating_items"/>
 
         <!--TODO need to change to a drop down for status-->
         <TextView
@@ -69,22 +72,15 @@
             android:textAllCaps="true"
             android:textAlignment="center"
             android:gravity="center_horizontal" />
-        <EditText
-            android:id="@+id/Status"
-            android:inputType="text"
-            android:hint="@string/status"/>
+        <Spinner
+            android:id="@+id/status_spinner"
+            android:spinnerMode="dropdown"
+            android:drawSelectorOnTop="true"
+            android:layout_height="17pt"
+            android:prompt="@string/statusspin"
+            android:entries="@array/spinnerItems"/>
         <!--TODO Need to potentially change Date to a calendar selector-->
-        <TextView
-            android:text="@string/date_completed"
-            android:textColor="@color/black"
-            android:background="@color/grey"
-            android:textAllCaps="true"
-            android:textAlignment="center"
-            android:gravity="center_horizontal" />
-        <EditText
-            android:id="@+id/DateCompleted"
-            android:inputType="date"
-            android:hint="@string/date_completed"/>
+
         <Button
             android:id="@+id/AddButton"
             android:text="@string/add_show"

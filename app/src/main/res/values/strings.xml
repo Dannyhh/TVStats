@@ -10,4 +10,6 @@
     <string name="my_shows">My Shows</string>
     <string name="stats">Stats</string>
     <string name="settings">Settings</string>
+    <string name="statusspin">Select Status</string>
+    <string name="ratingspin">Select your rating</string>
 </resources>
