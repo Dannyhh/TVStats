@@ -3,6 +3,7 @@ package com.example.tvstats;
 import android.app.Activity;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
@@ -13,7 +14,6 @@ public class MyShowsActivity extends Activity {
         setContentView(R.layout.activity_my_shows);
         buildButtons("");
     }
-    //TODO: Add the layout and any functions for this class
 
     public void buildButtons(String search){
         Cursor c;
@@ -28,6 +28,13 @@ public class MyShowsActivity extends Activity {
             Button temp = new Button(this);
             temp.setText(c.getString(1));
 
+            temp.setOnClickListener(new View.OnClickListener() {
+                public void  onClick(View v){
+                    /*TODO:Implement click listener to display data on the show
+                       corresponding to the Button
+                     */
+                }
+            });
 
             LinearLayout ll = (LinearLayout)findViewById(R.id.button_ll);
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
@@ -36,4 +43,5 @@ public class MyShowsActivity extends Activity {
             ll.addView(temp, lp);
         }
     }
+
 }

@@ -3,10 +3,8 @@ package com.example.tvstats;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     //name of our database of shows
@@ -20,6 +18,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String C4 = "rating";
     private static final String C5 = "status";
     private static final String C6 = "date_completed";
+    public static int DBV = 0;
 
 
     public DatabaseHelper(Context context) {
@@ -64,7 +63,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Cursor search(String search){
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase();
         String queryString =
                 "SELECT * FROM " + TABLE_NAME + " WHERE " + C1 + " LIKE '%" + search +"%'";
         return db.rawQuery(queryString, null);
@@ -81,5 +80,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         //TODO: insert query goes here
         return false;
+    }
+    public void dropTable(){
+        onUpgrade(this.getWritableDatabase(), DBV, DBV + 1);
+        DBV++;
     }
 }
