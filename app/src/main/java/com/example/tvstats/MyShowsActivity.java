@@ -11,12 +11,18 @@ public class MyShowsActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_shows);
-        buildButtons();
+        buildButtons("");
     }
     //TODO: Add the layout and any functions for this class
 
-    public void buildButtons(){
-        Cursor c = MainActivity.dbh.getAll();
+    public void buildButtons(String search){
+        Cursor c;
+        if(search.equals("")) {
+             c = MainActivity.dbh.search("");
+        }
+        else{
+            c = MainActivity.dbh.search(search);
+        }
         //int, string, int, int, int, string, string
         while(c.moveToNext()){
             Button temp = new Button(this);

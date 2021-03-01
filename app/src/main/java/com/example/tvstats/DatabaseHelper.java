@@ -60,16 +60,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(C5, status);
         values.put(C6, date);
         long result = db.insert(TABLE_NAME, null, values);
-        getAll();
         return result != -1;
     }
-    
-    public Cursor getAll(){
+
+    public Cursor search(String search){
         SQLiteDatabase db = this.getWritableDatabase();
         String queryString =
-                "SELECT * FROM " + TABLE_NAME;
+                "SELECT * FROM " + TABLE_NAME + " WHERE " + C1 + " LIKE '%" + search +"%'";
         return db.rawQuery(queryString, null);
     }
+
     public boolean editShow(String whatToEdit, String newVal){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
